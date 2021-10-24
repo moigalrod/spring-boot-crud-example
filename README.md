@@ -1,5 +1,7 @@
 
 
-# Example Sring Boot CRUD
+## Sring Boot CRUD
+
+To run ./mvnw spring-boot:run
 
 

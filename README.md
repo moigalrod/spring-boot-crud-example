@@ -1,5 +1,9 @@
 
 
-# Example Sring Boot CRUD
+## Sring Boot CRUD
+To run:
+```bash
+./mvnw spring-boot:run
+```
 
 

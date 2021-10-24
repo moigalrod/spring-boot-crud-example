@@ -1,7 +1,9 @@
 
 
 ## Sring Boot CRUD
-
-To run ./mvnw spring-boot:run
+To run:
+```bash
+./mvnw spring-boot:run
+```
 
 

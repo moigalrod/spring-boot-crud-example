@@ -46,7 +46,7 @@ public class ReservaController {
 	}
 
 	@PutMapping
-	public ResponseEntity<Reserva> updateReserva(@RequestBody Reserva reserva) {
+	public ResponseEntity<Reserva> updateReserva(@RequestBody @Valid Reserva reserva) {
 		Reserva res = reservaService.get(reserva.getId());
 		if (res == null) {
 			throw new ReservaNoEncontradaException(reserva.getId());

@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+
+import org.springframework.lang.NonNull;
 
 @Entity
 public class Reserva {
@@ -16,15 +19,18 @@ public class Reserva {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(name = "CLIENTE")
+	@NotEmpty(message = "Cliente no puede ser vacio")
+	@Column(name = "CLIENTE", length = 15)
 	private String cliente;
 
 	@Column(name = "NOCHES")
 	private Integer numNoches;
 
+	@NonNull
 	@Column(name = "FEC_ENTRADA")
 	private LocalDate entrada;
 
+	@NonNull
 	@Column(name = "FEC_SALIDA")
 	private LocalDate salida;
 
@@ -85,6 +91,17 @@ public class Reserva {
 	public Reserva(String cliente, Integer numNoches, LocalDate entrada, LocalDate salida,
 			boolean cancelable) {
 		super();
+		this.cliente = cliente;
+		this.numNoches = numNoches;
+		this.entrada = entrada;
+		this.salida = salida;
+		this.cancelable = cancelable;
+	}
+	
+	public Reserva(Long id, String cliente, Integer numNoches, LocalDate entrada, LocalDate salida,
+			boolean cancelable) {
+		super();
+		this.id = id;
 		this.cliente = cliente;
 		this.numNoches = numNoches;
 		this.entrada = entrada;

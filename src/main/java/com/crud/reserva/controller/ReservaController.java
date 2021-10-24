@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import javax.validation.Valid;
 import com.crud.reserva.exception.ReservaNoEncontradaException;
 import com.crud.reserva.model.Reserva;
 import com.crud.reserva.service.ReservaService;
@@ -40,7 +40,7 @@ public class ReservaController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Reserva> saveReserva(@RequestBody Reserva reserva) {
+	public ResponseEntity<Reserva> saveReserva(@RequestBody @Valid Reserva reserva) {
 		Reserva res = reservaService.save(reserva);
 		return new ResponseEntity<>(res, HttpStatus.CREATED);
 	}

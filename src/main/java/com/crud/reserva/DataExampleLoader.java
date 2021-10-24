@@ -21,7 +21,7 @@ public class DataExampleLoader implements ApplicationRunner  {
     }
 	
 	public void run(ApplicationArguments args) {
-		System.out.println("Creando datos de ejemplo....");
+		System.out.println("Creado datos de ejemplo....");
 		reservaRepository.save( new Reserva( "Moisés",  2, LocalDate.of(2020, 1, 8), LocalDate.of(2020, 1, 10),true));
 		reservaRepository.save( new Reserva( "Manuel",  5, LocalDate.of(2021, 2, 10), LocalDate.of(2022, 2, 15),true));
 		reservaRepository.save( new Reserva( "María",  3, LocalDate.of(2018, 5, 10), LocalDate.of(2018, 5, 13),false));
